@@ -1,2 +1,2 @@
-# LZY
+# Go-algorithm
 this is my git
