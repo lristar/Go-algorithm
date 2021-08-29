@@ -74,10 +74,11 @@ func (t *TreeNode) Layer(res []string, level int) {
 	}
 	res[level] = t.val
 }
+
 // 处理递归版层次遍历
-func (t *TreeNode)DealLayer(res []string, level int)[]string{
-	t.Layer(res,level+1)
-	return res[1:]
+func (t *TreeNode) DealLayer(res []string, level int) {
+	t.Layer(res, level+1)
+	res = res[1:]
 }
 
 // 层次遍历 非递归
@@ -101,5 +102,4 @@ func (t *TreeNode) LevelTraversal() {
 	for e := range result {
 		fmt.Print(e, " ")
 	}
-
 }

@@ -14,6 +14,6 @@ func main() {
 	left.AddRight("4")
 	//root.LevelTraversal()
 	list := make([]string, 20)
-	list=root.DealLayer(list, 0)
+	root.DealLayer(list, 0)
 	fmt.Println(list)
 }
