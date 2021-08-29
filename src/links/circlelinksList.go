@@ -5,6 +5,7 @@ import (
 	"fmt"
 )
 
+//循环单链表
 type data string
 
 type CircleHead struct {

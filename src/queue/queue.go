@@ -1,5 +1,6 @@
 package queue
 
+//循环队列
 type Queue struct {
 	List []string
 	Tail int

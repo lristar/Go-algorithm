@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-
+//单链表
 type ListNode struct {
 	index int
 	Value string
