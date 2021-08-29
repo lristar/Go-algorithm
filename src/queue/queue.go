@@ -1,5 +1,7 @@
 package queue
 
+import "errors"
+
 //循环队列
 type Queue struct {
 	List []string
@@ -23,10 +25,13 @@ func (q *Queue) Push(str string) {
 	}
 }
 
-func (q *Queue) Pop() {
+func (q *Queue) Pop()(string,error) {
 	if !q.IsEmpty() {
+		str:=q.List[q.Tail]
 		q.Tail = (q.Tail + 1) % q.Size
+		return str,nil
 	}
+	return "",errors.New("queue is empty")
 }
 
 func (q *Queue) IsFull() bool {

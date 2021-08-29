@@ -6,12 +6,14 @@ import (
 )
 
 func main() {
-	root:=tree.NewRoot("0")
+	root := tree.NewRoot("0")
 	root.AddLeft("1")
 	root.AddRight("2")
-	root.PreOrder()
-	fmt.Println()
-	root.MidOrder()
-	fmt.Println()
-	root.PostOrder()
+	left := root.GetLeft()
+	left.AddLeft("3")
+	left.AddRight("4")
+	//root.LevelTraversal()
+	list := make([]string, 20)
+	list=root.DealLayer(list, 0)
+	fmt.Println(list)
 }
