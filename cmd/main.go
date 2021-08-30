@@ -4,8 +4,8 @@ import "Go-algorithm/src/tree"
 
 func main() {
 	root:=tree.NewBsRoot(9)
-	root.InsertBst(8)
-	root.InsertBst(13)
-	root.InsertBst(6)
-	root.LevelTraversal()
+	root.Insert(8)
+	root.Insert(13)
+	root.Insert(6)
+	root.FindNode(6)
 }

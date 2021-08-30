@@ -16,23 +16,61 @@ func NewBsRoot(val int) *BSTreeNode {
 //插入新数据 递归版本
 func (b *BSTreeNode) InsertBst(val int) {
 	if b.val < val {
-       if b.right == nil{
-       	b.right=&BSTreeNode{val:val}
-		   return
-	   }
-	   b.right.InsertBst(val)
+		if b.right == nil {
+			b.right = &BSTreeNode{val: val}
+			return
+		}
+		b.right.InsertBst(val)
 	}
 	if b.val > val {
-		if b.left == nil{
-			b.left=&BSTreeNode{val:val}
+		if b.left == nil {
+			b.left = &BSTreeNode{val: val}
 			return
 		}
 		b.left.InsertBst(val)
 	}
 }
 
-//递归遍历
+//插入新数据，非递归版本
+func (b *BSTreeNode) Insert(val int) {
+	for true {
+		if b.val > val {
+			if b.left == nil {
+				b.left = &BSTreeNode{val: val}
+				return
+			}
+			b = b.left
+		} else if b.val < val {
+			if b.right == nil {
+				b.right = &BSTreeNode{val: val}
+				return
+			}
+			b = b.right
+		} else {
+			fmt.Print("元素已存在")
+			return
+		}
+	}
+}
 
+//查找数字
+func (b *BSTreeNode) FindNode(val int) {
+	if b == nil {
+		fmt.Print("没有这个数值")
+		return
+	}
+	if b.val == val {
+       fmt.Print(b)
+	}
+	if b.val > val {
+		b.left.FindNode(val)
+	}
+	if b.val < val {
+		b.right.FindNode(val)
+	}
+}
+
+//层次遍历
 func (t *BSTreeNode) LevelTraversal() {
 	if t == nil {
 		return
