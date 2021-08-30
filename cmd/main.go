@@ -1,19 +1,11 @@
 package main
 
-import (
-	"Go-algorithm/src/tree"
-	"fmt"
-)
+import "Go-algorithm/src/tree"
 
 func main() {
-	root := tree.NewRoot("0")
-	root.AddLeft("1")
-	root.AddRight("2")
-	left := root.GetLeft()
-	left.AddLeft("3")
-	left.AddRight("4")
-	//root.LevelTraversal()
-	list := make([]string, 20)
-	root.DealLayer(list, 0)
-	fmt.Println(list)
+	root:=tree.NewBsRoot(9)
+	root.InsertBst(8)
+	root.InsertBst(13)
+	root.InsertBst(6)
+	root.LevelTraversal()
 }
