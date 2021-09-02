@@ -39,6 +39,9 @@ func (b *AvlTree) Insert(val int) {
 //判断是哪种类型的平衡方式
 
 //LL型
+func (b *AvlTree)UseLL(){
+
+}
 //RR型
 //LR型
 //RL型
