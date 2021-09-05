@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b823856-9aa1-4073-a4e7-310bbe2b04cc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/tree/AVLTree.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree/AVLTree.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sort/exchangeSort.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sort/insertSort.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sort/mergeSort.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sort/selectSort.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/main.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +22,7 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" path="/usr/local/go" />
+  <component name="GOROOT" path="C:/Program Files/Go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -136,9 +141,24 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/cmd/main.go</url>
-          <line>8</line>
-          <option name="timeStamp" value="18" />
+          <url>file://$PROJECT_DIR$/src/sort/insertSort.go</url>
+          <line>3</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/src/sort/insertSort.go</url>
+          <line>6</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/src/sort/exchangeSort.go</url>
+          <line>28</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/src/sort/exchangeSort.go</url>
+          <line>39</line>
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

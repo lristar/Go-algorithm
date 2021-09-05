@@ -1,10 +1,12 @@
 package main
 
-import "Go-algorithm/src/tree"
+import (
+	"Go-algorithm/src/sort"
+	"fmt"
+)
 
 func main() {
-	root:=tree.NewHashRoot("1")
-	root.InsertLeft("2")
-	root.InsertRight("3")
-	root.FindOneByHash("01")
+	aa:=[]int{31,47,9,5,30,72,15}
+	sort.QuickSort(0,6,aa)
+	fmt.Println(aa)
 }
