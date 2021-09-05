@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b823856-9aa1-4073-a4e7-310bbe2b04cc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/sort/exchangeSort.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sort/insertSort.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sort/mergeSort.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sort/selectSort.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sort/mergeSort.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/sort/mergeSort.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -152,15 +149,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/src/sort/exchangeSort.go</url>
-          <line>28</line>
+          <line>27</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/src/sort/exchangeSort.go</url>
-          <line>39</line>
+          <line>38</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/src/sort/mergeSort.go</url>
+          <line>3</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="DlvErrorBreakpoint" />
+      </default-breakpoints>
     </breakpoint-manager>
   </component>
 </project>

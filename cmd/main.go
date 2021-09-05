@@ -7,6 +7,6 @@ import (
 
 func main() {
 	aa:=[]int{31,47,9,5,30,72,15}
-	sort.QuickSort(0,6,aa)
+	sort.MergeSort(0,6,aa)
 	fmt.Println(aa)
 }
