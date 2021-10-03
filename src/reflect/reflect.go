@@ -97,18 +97,22 @@ func (f *Container) GetInstance(tag string) interface{} {
 }
 
 func Init() {
+	GFactory.SetSingleton("Student", &Student{})
 	GFactory.SetSingleton("Controller", &Controller{})
 	ctlFactory := &Factory{}
 	GFactory.SetSingleton("CtrlFactory", ctlFactory)
-	GFactory.Entry(ctlFactory)
+	err := GFactory.Entry(ctlFactory)
+	if err != nil {
+		return
+	}
 }
 
 func main() {
 	Init()
-   injectVal,err:= GFactory.GetSingleton("Controller")
-   if err!=nil{
-   	return
-   }
-   c:=injectVal.(*Controller)
-   c.stu.Hello("hello")
+	injectVal, err := GFactory.GetSingleton("Student")
+	if err != nil {
+		return
+	}
+	c := injectVal.(*Student)
+	c.Hello("hello")
 }
