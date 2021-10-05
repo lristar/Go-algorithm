@@ -1,18 +1,17 @@
 package main
 
 import (
-	"Go-algorithm/src/design-pattern/createType/abstractFactory"
-	"Go-algorithm/src/design-pattern/createType/abstractFactory/sharpFactory"
-	"time"
+	"Go-algorithm/src/design-pattern/createType/builder"
+	"fmt"
 )
 
 func main() {
-	var abf abstractFactory.AbstractFactory
-	var dir abstractFactory.IDirectory
-
-	abf = &sharpFactory.ShapeFactory{}
-	dir = abf.CreateDirectory()
-	dir.Start()
-	time.Sleep(time.Second*50)
-	dir.Stop()
+	b:=builder.Builder{}
+	m:=b.PrepareVegMeal()
+	m.ShowItems()
+	m.GetCost()
+	fmt.Println("----------")
+	m1:=b.PrepareSweetMeal()
+	m1.ShowItems()
+	m1.GetCost()
 }
