@@ -5,6 +5,7 @@ import (
 	"Go-algorithm/src/design-pattern/structureType/adaptType/media"
 	"Go-algorithm/src/design-pattern/structureType/agentType"
 	"Go-algorithm/src/design-pattern/structureType/agentType/person"
+	"Go-algorithm/src/design-pattern/structureType/facadeType"
 	"testing"
 )
 
@@ -44,5 +45,12 @@ func Test_proxy(t *testing.T) {
 	proxy.SellProduct("orange",2)
 	proxy.SellProduct("orange",8)
 	proxy.SellProduct("Apple",10)
+}
+
+func Test_Facade(t *testing.T) {
+	maker:=facadeType.NewMaker()
+	maker.GetCircle()
+	maker.GetRectangle()
+	maker.GetSquare()
 }
 

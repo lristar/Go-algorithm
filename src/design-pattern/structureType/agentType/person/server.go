@@ -26,3 +26,5 @@ func (s *Server) GetProductNum() int {
 func (s *Server) GetProductBalance() float64 {
 	return s.ProductBalance
 }
+
+
