@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b823856-9aa1-4073-a4e7-310bbe2b04cc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/design-pattern/structureType/facadeType/shape/shape.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/design-pattern/structureType/facadeType/shapeMaker.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design-pattern/structureType/agentType/person/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/design-pattern/structureType/agentType/person/server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/design-pattern/structureType/structureType_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/design-pattern/structureType/structureType_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/otherTest/otherTest.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,16 +73,7 @@
       <recent name="D:\go\src\Go-algorithm" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.Test_Facade in Go-algorithm/src/design-pattern/structureType">
-    <configuration name="go build Go-algorithm/src/design-pattern/createType" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="Go-algorithm" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="Go-algorithm/src/design-pattern/createType" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/src/design-pattern/createType/singleton.go" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Go Build.go build Go-algorithm/src/otherTest">
     <configuration name="go build Go-algorithm/src/design-pattern/structureType" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="Go-algorithm" />
       <working_directory value="$PROJECT_DIR$" />
@@ -94,6 +81,15 @@
       <package value="Go-algorithm/src/design-pattern/structureType" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$/src/design-pattern/structureType/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build Go-algorithm/src/otherTest" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="Go-algorithm" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="Go-algorithm/src/otherTest" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/src/otherTest/otherTest.go" />
       <method v="2" />
     </configuration>
     <configuration name="Test_Adapt in Go-algorithm/src/design-pattern/structureType" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -134,11 +130,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build Go-algorithm/src/otherTest" />
         <item itemvalue="Go Test.Test_Facade in Go-algorithm/src/design-pattern/structureType" />
         <item itemvalue="Go Test.Test_proxy in Go-algorithm/src/design-pattern/structureType" />
         <item itemvalue="Go Test.Test_Adapt in Go-algorithm/src/design-pattern/structureType" />
         <item itemvalue="Go Build.go build Go-algorithm/src/design-pattern/structureType" />
-        <item itemvalue="Go Build.go build Go-algorithm/src/design-pattern/createType" />
       </list>
     </recent_temporary>
   </component>
