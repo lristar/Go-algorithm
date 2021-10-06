@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b823856-9aa1-4073-a4e7-310bbe2b04cc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/design-pattern/createType/builder/builder.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/design-pattern/createType/builder/item/item.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/design-pattern/createType/builder/product/product.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design-pattern/createType/protoType/proto/shape.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design-pattern/createType/protoType/protoClone.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design-pattern/structureType/adaptType/adapt.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design-pattern/structureType/adaptType/media/MP3.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design-pattern/structureType/adaptType/media/MP4.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/design-pattern/structureType/structureType_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/design-pattern/createType/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/design-pattern/createType/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,12 +64,13 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/design-pattern/createType/abstractFactory/shareFactory/workers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/design-pattern/structureType/adaptType/media" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\go\src\Go-algorithm\src\design-pattern\structureType\adaptType\media" />
       <recent name="D:\go\src\Go-algorithm\src\design-pattern\createType\abstractFactory\shareFactory\workers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -75,7 +80,7 @@
       <recent name="D:\go\src\Go-algorithm" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build Go-algorithm/src/design-pattern/createType">
+  <component name="RunManager" selected="Go Test.Test_Adapt in Go-algorithm/src/design-pattern/structureType">
     <configuration name="go build Go-algorithm/cmd" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="Go-algorithm" />
       <working_directory value="$PROJECT_DIR$" />
@@ -83,15 +88,6 @@
       <package value="Go-algorithm/cmd" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/cmd/main.go" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build Go-algorithm/src/cmd" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="Go-algorithm" />
-      <working_directory value="$PROJECT_DIR$/" />
-      <kind value="PACKAGE" />
-      <package value="Go-algorithm/src/cmd" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/src/cmd/main.go" />
       <method v="2" />
     </configuration>
     <configuration name="go build Go-algorithm/src/design-pattern/createType" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -103,6 +99,15 @@
       <filePath value="$PROJECT_DIR$/src/design-pattern/createType/singleton.go" />
       <method v="2" />
     </configuration>
+    <configuration name="go build Go-algorithm/src/design-pattern/structureType" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="Go-algorithm" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="Go-algorithm/src/design-pattern/structureType" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/src/design-pattern/structureType/main.go" />
+      <method v="2" />
+    </configuration>
     <configuration name="go build Go-algorithm/src/reflect" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="Go-algorithm" />
       <working_directory value="$PROJECT_DIR$" />
@@ -112,22 +117,25 @@
       <filePath value="$PROJECT_DIR$/src/reflect/reflect.go" />
       <method v="2" />
     </configuration>
-    <configuration name="go build cmd" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Test_Adapt in Go-algorithm/src/design-pattern/structureType" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="Go-algorithm" />
-      <working_directory value="$PROJECT_DIR$/" />
+      <working_directory value="$PROJECT_DIR$/src/design-pattern/structureType" />
+      <root_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="cmd" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/src/cmd/main.go" />
+      <package value="Go-algorithm/src/design-pattern/structureType" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTest_Adapt\E$" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.Test_Adapt in Go-algorithm/src/design-pattern/structureType" />
+        <item itemvalue="Go Build.go build Go-algorithm/src/design-pattern/structureType" />
         <item itemvalue="Go Build.go build Go-algorithm/src/design-pattern/createType" />
         <item itemvalue="Go Build.go build Go-algorithm/src/reflect" />
         <item itemvalue="Go Build.go build Go-algorithm/cmd" />
-        <item itemvalue="Go Build.go build cmd" />
-        <item itemvalue="Go Build.go build Go-algorithm/src/cmd" />
       </list>
     </recent_temporary>
   </component>
