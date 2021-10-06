@@ -2,6 +2,7 @@ package person
 
 import (
 	"errors"
+	"fmt"
 )
 
 type IClient interface {
@@ -29,7 +30,9 @@ func (c *Client) BuyProduct(product string, num int, productBalance float64) err
 		oldNum := v
 		c.product[product] = oldNum + num
 		c.values -= all
+		fmt.Println("购买成功")
 		return nil
 	}
+	fmt.Println("我考虑一下")
 	return errors.New("不够钱")
 }

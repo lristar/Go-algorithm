@@ -41,8 +41,8 @@ func Test_proxy(t *testing.T) {
 	// 创建客户
 	proxy.AddClient(person.NewClient(60.00))
 	proxy.SellProduct("banana",10)
-	proxy.SellProduct("orange",20)
-	proxy.SellProduct("orange",10)
+	proxy.SellProduct("orange",2)
+	proxy.SellProduct("orange",8)
 	proxy.SellProduct("Apple",10)
 }
 

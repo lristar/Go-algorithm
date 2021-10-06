@@ -41,10 +41,8 @@ func (p *Proxy) SellProduct(productName string, num int) {
 	// 正常情况是要用事务的
 	err := p.c.BuyProduct(productName, num, v.GetProductBalance())
 	if err != nil {
-		fmt.Println("我考虑一下")
 		return
 	}
-	fmt.Println("购买成功")
 	v.SellProduct(num)
 	fmt.Println(productName, "这个商品交易完成")
 }
