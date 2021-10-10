@@ -9,7 +9,7 @@ import (
 var SubCommand = &cli.Command{
 	Name:        "go",
 	Description: fmt.Sprintf("%s","go参数用于输出"),
-	Usage: "use to sprint",
+	Usage: "print the first",
     Subcommands: []*cli.Command{
 		StudyCmd,
 	},
