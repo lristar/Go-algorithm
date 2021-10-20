@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b823856-9aa1-4073-a4e7-310bbe2b04cc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/otherTest/commandTest/commandTest.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/otherTest/commandTest/commandTest.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/otherTest/commandTest/inner/inner.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/otherTest/commandTest/command" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/otherTest/fileCopy.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tools/minio/minio_client.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,10 +19,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Go File" />
+        <option value="Go Application" />
       </list>
     </option>
   </component>
-  <component name="GOROOT" path="C:/Program Files/Go" />
+  <component name="GOROOT" path="/usr/local/go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -52,7 +54,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="DefaultGoTemplateProperty" value="Go Application" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -79,97 +81,100 @@
       <recent name="D:\go\src\Go-algorithm" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build Go-algorithm/src/otherTest/commandTest">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Go Build.go build Go-algorithm/src/tools/minio">
     <configuration name="go build Go-algorithm/src/otherTest" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="Go-algorithm" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/src/otherTest/otherTest.go" />
       <package value="Go-algorithm/src/otherTest" />
       <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/src/otherTest/otherTest.go" />
       <method v="2" />
     </configuration>
     <configuration name="go build Go-algorithm/src/otherTest/commandTest" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="Go-algorithm" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/src/otherTest/commandTest/commandTest.go" />
       <package value="Go-algorithm/src/otherTest/commandTest" />
       <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/src/otherTest/commandTest/commandTest.go" />
       <method v="2" />
     </configuration>
-    <configuration name="Test_Adapt in Go-algorithm/src/design-pattern/structureType" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="go build Go-algorithm/src/tools/minio" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="Go-algorithm" />
-      <working_directory value="$PROJECT_DIR$/src/design-pattern/structureType" />
-      <root_directory value="$PROJECT_DIR$" />
+      <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="Go-algorithm/src/design-pattern/structureType" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <pattern value="^\QTest_Adapt\E$" />
+      <filePath value="$PROJECT_DIR$/src/tools/minio/minio_client.go" />
+      <package value="Go-algorithm/src/tools/minio" />
+      <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
     <configuration name="Test_Facade in Go-algorithm/src/design-pattern/structureType" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="Go-algorithm" />
       <working_directory value="$PROJECT_DIR$/src/design-pattern/structureType" />
-      <root_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
       <kind value="PACKAGE" />
       <package value="Go-algorithm/src/design-pattern/structureType" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
-      <framework value="gotest" />
       <pattern value="^\QTest_Facade\E$" />
       <method v="2" />
     </configuration>
     <configuration name="Test_proxy in Go-algorithm/src/design-pattern/structureType" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="Go-algorithm" />
       <working_directory value="$PROJECT_DIR$/src/design-pattern/structureType" />
-      <root_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
       <kind value="PACKAGE" />
       <package value="Go-algorithm/src/design-pattern/structureType" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
-      <framework value="gotest" />
       <pattern value="^\QTest_proxy\E$" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build Go-algorithm/src/tools/minio" />
         <item itemvalue="Go Build.go build Go-algorithm/src/otherTest/commandTest" />
         <item itemvalue="Go Build.go build Go-algorithm/src/otherTest" />
         <item itemvalue="Go Test.Test_Facade in Go-algorithm/src/design-pattern/structureType" />
         <item itemvalue="Go Test.Test_proxy in Go-algorithm/src/design-pattern/structureType" />
-        <item itemvalue="Go Test.Test_Adapt in Go-algorithm/src/design-pattern/structureType" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
-    <environment>
-      <map>
-        <entry key="GOPROXY" value="https://goproxy.cn,direct" />
-      </map>
-    </environment>
     <proxy>https://goproxy.cn,direct</proxy>
   </component>
   <component name="XDebuggerManager">
