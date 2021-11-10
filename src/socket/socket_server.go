@@ -4,17 +4,25 @@ import (
 	"fmt"
 	"log"
 	"net"
-	"bufio"
 )
-func handleConnection(conn net.Conn) {
-	data, err := bufio.NewReader(conn).ReadString('\n')
-	if err != nil {
-		log.Fatal("get client data error: ", err)
+//go-tcpsock/read_write/server2.go
+
+func handleConn(c net.Conn) {
+	defer c.Close()
+	for {
+		// read from the connection
+		var buf = make([]byte, 1024*1024)
+		log.Println("start to read from conn")
+		n, err := c.Read(buf)
+		if err != nil {
+			log.Println("conn read error:", err)
+			return
+		}
+		fmt.Println(string(buf[:n]))
 	}
-	fmt.Printf("%#v\n", data)
-	fmt.Fprintf(conn, "hello client\n")
-	conn.Close()
 }
+
+
 func main() {
 	ln, err := net.Listen("tcp", ":6010")
 	if err != nil {
@@ -25,6 +33,6 @@ func main() {
 		if err != nil {
 			log.Fatal("get client connection error: ", err)
 		}
-		go handleConnection(conn)
+		go handleConn(conn)
 	}
 }
