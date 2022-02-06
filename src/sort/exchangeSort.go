@@ -27,7 +27,7 @@ func QuickSort(left, right int, aa []int) {
 func Partition(left, right int, aa []int) int {
 	val := aa[left]
 	for left != right {
-		for left != right {
+		for true {
 			if aa[right] <= val {
 				aa[left] = aa[right]
 				left++
@@ -35,7 +35,7 @@ func Partition(left, right int, aa []int) int {
 			}
 			right--
 		}
-		for left != right {
+		for true {
 			if aa[left] > val {
 				aa[right] = aa[left]
 				right--

@@ -42,7 +42,6 @@ func (c *CircleHead) Add(str string) {
 		}
 	}
 	return
-
 }
 
 func (c *CircleHead) RemoveAll() {
@@ -65,7 +64,6 @@ func (c *CircleHead) RemoveOne(index int) error {
 			last.Next = c.Head
 			c.len--
 			return nil
-
 		}
 		//头结点和尾结点之间的节点
 		for head.Next != c.Head {
