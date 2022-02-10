@@ -15,7 +15,7 @@ func Test_Adapt(t *testing.T) {
 	madapt.AddMedia("MP4", &media.Mp4{Music: "七里香"})
 	mplayer := adaptType.MediaPlayer{}
 	mplayer.CreateMediaAdapter(&madapt)
-	mplayer.Player("MP6")
+	mplayer.Player("MP3")
 }
 
 func Test_proxy(t *testing.T) {

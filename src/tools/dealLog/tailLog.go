@@ -9,7 +9,7 @@ import (
 // tailf的用法示例
 
 func main() {
-	fileName := "D:/go/src/Go-algorithm/test.log"
+	fileName := "/home/lzy/test/aaaa"
 	config := tail.Config{
 		ReOpen:    true,                                 // 重新打开
 		Follow:    true,                                 // 是否跟随

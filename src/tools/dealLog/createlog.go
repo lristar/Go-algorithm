@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	filePath := "D:/go/src/Go-algorithm/test.log"
+	filePath := "/home/lzy/test/aaaa"
 	file, err := os.OpenFile(filePath, os.O_WRONLY|os.O_APPEND, 0666)
 	if err != nil {
 		fmt.Println("文件打开失败", err)
@@ -18,7 +18,8 @@ func main() {
 	//写入文件时，使用带缓存的 *Writer
 	write := bufio.NewWriter(file)
 	for true {
-		write.WriteString("hello \r\n")
+		write.WriteString("1 \r\n")
+		write.WriteString("2 \r\n")
 		write.Flush()
 		time.Sleep(5*time.Second)
 	}
