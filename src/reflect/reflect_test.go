@@ -1,10 +1,11 @@
-package main
+package reflect
 
 import (
 	"errors"
 	"fmt"
 	"reflect"
 	"sync"
+	"testing"
 )
 
 var injectTagName = "inject" //依赖注入tag名
@@ -111,7 +112,7 @@ func Init() {
 	}
 }
 
-func main() {
+func Test_reflect(t *testing.T) {
 	Init()
 	stu, err := GFactory.GetSingleton("Student")
 	if err != nil {
