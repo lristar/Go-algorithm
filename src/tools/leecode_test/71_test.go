@@ -120,36 +120,35 @@ func reverse(x int) int {
 	return tail
 }
 
-func TestFlattenBinaryTreeToLinkedList(t *testing.T){
-	root :=NewTree()
-	flatten(root)
-}
+//func TestFlattenBinaryTreeToLinkedList(t *testing.T) {
+//	root := NewTree()
+//	flatten(root)
+//}
 
 type ListNode struct {
-	     Val int
-	     Next *ListNode
+	Val  int
+	Next *ListNode
 }
 
-
-
-func NewList(ins []int)*ListNode{
-	root :=ListNode{}
-	head :=&root
+func NewList(ins []int) *ListNode {
+	root := ListNode{}
+	head := &root
 	for k, v := range ins {
-		head.Val=v
-		if k != len(ins)-1{
+		head.Val = v
+		if k != len(ins)-1 {
 			head.Next = &ListNode{}
 			head = head.Next
 		}
 	}
 	return &root
 }
+
 //leetcode submit region end(Prohibit modification and deletion)
 
-func reserve(h1 *ListNode)*ListNode{
+func reserve(h1 *ListNode) *ListNode {
 	var prev, cur *ListNode = nil, h1
-	for cur !=nil{
-		tmp :=cur.Next
+	for cur != nil {
+		tmp := cur.Next
 		cur.Next = prev
 		prev = cur
 		cur = tmp
@@ -157,12 +156,11 @@ func reserve(h1 *ListNode)*ListNode{
 	return prev
 }
 
-
 func middleNode(head *ListNode) *ListNode {
 	// 快慢指针
 	slow := head
 	fast := head
-	for fast!=nil &&fast.Next != nil{
+	for fast != nil && fast.Next != nil {
 		slow = slow.Next
 		fast = fast.Next.Next
 	}
@@ -183,30 +181,30 @@ func mergeList(l1, l2 *ListNode) {
 	}
 }
 
-func reorderList(head *ListNode)  {
-	if head == nil{
+func reorderList(head *ListNode) {
+	if head == nil {
 		return
 	}
 
 	mid := middleNode(head)
-	l2 :=mid.Next
-	mid.Next =nil
-	rev :=reserve(l2)
-	mergeList(head,rev)
+	l2 := mid.Next
+	mid.Next = nil
+	rev := reserve(l2)
+	mergeList(head, rev)
 	showList(head)
 
 }
 
-func showList( l *ListNode){
-	for l!=nil{
-		fmt.Println("node is ",l.Val)
+func showList(l *ListNode) {
+	for l != nil {
+		fmt.Println("node is ", l.Val)
 		l = l.Next
 	}
 }
 
-func TestReorderList(t *testing.T){
-	ins :=[]int{1,3,4,5,6}
-	list :=NewList(ins)
+func TestReorderList(t *testing.T) {
+	ins := []int{1, 3, 4, 5, 6}
+	list := NewList(ins)
 	reorderList(list)
 }
 
@@ -227,67 +225,70 @@ func TestReorderList(t *testing.T){
 // }
 // 双指针方法
 func maxArea(height []int) int {
-	max :=0
-	t := len(height)-1
-	h :=0
+	max := 0
+	t := len(height) - 1
+	h := 0
 	for h < t {
-		hg,isLeft :=min(height[h],height[t])
-		if max <sq(t-h,hg){
-			max =sq(t-h,hg)
+		hg, isLeft := min(height[h], height[t])
+		if max < sq(t-h, hg) {
+			max = sq(t-h, hg)
 		}
 		if isLeft {
 			h++
-		}else{
+		} else {
 			t++
 		}
 	}
 	return max
 }
 
-func sq(d,h int)int{
-	return d*h
+func sq(d, h int) int {
+	return d * h
 }
 
-func min(i,j int)(int,bool){
-	if i >j {
-		return j,true
+func min(i, j int) (int, bool) {
+	if i > j {
+		return j, true
 	}
-	return i,false
+	return i, false
 }
+
 //leetcode submit region end(Prohibit modification and deletion)
 
-
-func TestContainerWithMostWater(t *testing.T){
-	height :=[]int{8,4,5,6,25,6}
+func TestContainerWithMostWater(t *testing.T) {
+	height := []int{8, 4, 5, 6, 25, 6}
 	fmt.Println(maxArea(height))
 }
+
 // 回溯算法
+//leetcode submit region begin(Prohibit modification and deletion)
 var all [][]int
 func permute(nums []int) [][]int {
-	other := []int{}
-	for _,v := range nums {
-		other = append(other, v)
+	all = [][]int{}
+	backTrack(len(nums),nums,[]int{})
+	return all
+}
+func backTrack(length int, output []int, path []int)  {
+	if length == 0 {
+		// 要新开辟一个int数组，新的地址 保证all内的数据不会被修改
+		p:=make([]int,len(path))
+		copy(p,path)
+		all = append(all,p)
 	}
-	length := len(nums)
-	backTrack(length,other)
-	return nil
+	for i:=0;i < length;i ++{
+		curNum :=output[i]
+		path= append(path, curNum)
+		output = append(output[0:i], output[i+1:]...)
+		backTrack(len(output),output,path)
+		output = append(output[:i], append([]int{curNum},output[i:]...)...)
+		path = path[:len(path)-1]
+	}
 }
 
-//
-func backTrack(len int,output []int){
-
-}
 
 //leetcode submit region end(Prohibit modification and deletion)
-
 
 
 func TestPermutations(t *testing.T){
-	nums :=[]int{11,2,4,6,8,9}
-	makeNums(nums)
-	fmt.Println(nums)
-}
-
-func makeNums(nums []int){
-	nums =append(nums, []int{15,6}...)
+	fmt.Println(permute([]int{5,4,6,2}))
 }
