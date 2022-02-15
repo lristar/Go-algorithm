@@ -197,17 +197,18 @@ func TestContainerWithMostWater(t *testing.T){
 	fmt.Println(maxArea(height))
 }
 // 回溯算法
+var all [][]int
 func permute(nums []int) [][]int {
-	var all [][]int
-	other :=[]int{}
+	other := []int{}
 	for _,v := range nums {
 		other = append(other, v)
 	}
 	length := len(nums)
-	backTrack(other)
+	backTrack(length,other)
+	return nil
 }
 
-func backTrack(output []int){
+func backTrack(len int,output []int){
 
 }
 
@@ -215,6 +216,11 @@ func backTrack(output []int){
 
 
 func TestPermutations(t *testing.T){
-
+	nums :=[]int{11,2,4,6,8,9}
+	makeNums(nums)
+	fmt.Println(nums)
 }
 
+func makeNums(nums []int){
+	nums =append(nums, []int{15,6}...)
+}
