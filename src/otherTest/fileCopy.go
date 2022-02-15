@@ -5,9 +5,9 @@ import (
 	"time"
 )
 
-func main() {
-	for true{
-		exec.Command("/bin/bash","-c" ,"echo 'aaaa' >> /home/lzy/test/aaaaaa")
-		time.Sleep(600)
-	}
-}
+// func main() {
+// 	for true{
+// 		exec.Command("/bin/bash","-c" ,"echo 'aaaa' >> /home/lzy/test/aaaaaa")
+// 		time.Sleep(600)
+// 	}
+// }
