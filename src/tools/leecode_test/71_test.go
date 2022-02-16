@@ -22,7 +22,7 @@ func NewTree() *TreeNode {
 	return &root
 }
 
-//func show(node *TreeNode,res *TreeNode, root *TreeNode){
+// func show(node *TreeNode,res *TreeNode, root *TreeNode){
 //	res.Val=node.Val
 //	if node.Left !=nil{
 //		res.Right = &TreeNode{}
@@ -35,8 +35,8 @@ func NewTree() *TreeNode {
 //		res=res.Right
 //		show(node.Right,res,root)
 //	}
-//}
-//leetcode submit region begin(Prohibit modification and deletion)
+// }
+// leetcode submit region begin(Prohibit modification and deletion)
 func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	nums1 = append(nums1, nums2...)
 	sort.Ints(nums1)
@@ -48,7 +48,7 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	return float64(nums1[i/2])
 }
 
-//leetcode submit region end(Prohibit modification and deletion)
+// leetcode submit region end(Prohibit modification and deletion)
 
 func TestMedianOfTwoSortedArrays(t *testing.T) {
 	num1 := []int{1, 2, 3, 5, 8}
@@ -96,7 +96,7 @@ func Judge_str(s string) bool {
 	if l%2 == 0 {
 		mid = l / 2
 	}
-	for i := 0; i < mid; i ++ {
+	for i := 0; i < mid; i++ {
 		for s[i] != s[l-i-1] {
 			return false
 		}
@@ -105,10 +105,10 @@ func Judge_str(s string) bool {
 }
 
 func TestLongestPalindromicSubstring(t *testing.T) {
-	//fmt.Printf("是不是回文:%v", Judge_str("aafaafaa"))
+	// fmt.Printf("是不是回文:%v", Judge_str("aafaafaa"))
 }
 
-//leetcode submit region begin(Prohibit modification and deletion)
+// leetcode submit region begin(Prohibit modification and deletion)
 func reverse(x int) int {
 	// 我进行反着加
 	tail := 0
@@ -120,10 +120,10 @@ func reverse(x int) int {
 	return tail
 }
 
-//func TestFlattenBinaryTreeToLinkedList(t *testing.T) {
+// func TestFlattenBinaryTreeToLinkedList(t *testing.T) {
 //	root := NewTree()
 //	flatten(root)
-//}
+// }
 
 type ListNode struct {
 	Val  int
@@ -143,7 +143,7 @@ func NewList(ins []int) *ListNode {
 	return &root
 }
 
-//leetcode submit region end(Prohibit modification and deletion)
+// leetcode submit region end(Prohibit modification and deletion)
 
 func reserve(h1 *ListNode) *ListNode {
 	var prev, cur *ListNode = nil, h1
@@ -185,14 +185,12 @@ func reorderList(head *ListNode) {
 	if head == nil {
 		return
 	}
-
 	mid := middleNode(head)
 	l2 := mid.Next
 	mid.Next = nil
 	rev := reserve(l2)
 	mergeList(head, rev)
 	showList(head)
-
 }
 
 func showList(l *ListNode) {
@@ -208,7 +206,7 @@ func TestReorderList(t *testing.T) {
 	reorderList(list)
 }
 
-//leetcode submit region begin(Prohibit modification and deletion)
+// leetcode submit region begin(Prohibit modification and deletion)
 // 暴力破解法
 // func maxArea(height []int) int {
 // 	max :=0
@@ -253,7 +251,7 @@ func min(i, j int) (int, bool) {
 	return i, false
 }
 
-//leetcode submit region end(Prohibit modification and deletion)
+// leetcode submit region end(Prohibit modification and deletion)
 
 func TestContainerWithMostWater(t *testing.T) {
 	height := []int{8, 4, 5, 6, 25, 6}
@@ -261,34 +259,194 @@ func TestContainerWithMostWater(t *testing.T) {
 }
 
 // 回溯算法
-//leetcode submit region begin(Prohibit modification and deletion)
+// leetcode submit region begin(Prohibit modification and deletion)
 var all [][]int
+
 func permute(nums []int) [][]int {
 	all = [][]int{}
-	backTrack(len(nums),nums,[]int{})
+	used := make([]int, 0, len(nums))
+	sort.Ints(nums)
+	backTrack(len(nums), nums, []int{}, used, 0)
 	return all
 }
-func backTrack(length int, output []int, path []int)  {
+
+func backTrack(length int, output []int, path []int, used []int, useNum int) {
 	if length == 0 {
 		// 要新开辟一个int数组，新的地址 保证all内的数据不会被修改
-		p:=make([]int,len(path))
-		copy(p,path)
-		all = append(all,p)
+		p := make([]int, len(path))
+		copy(p, path)
+		all = append(all, p)
 	}
-	for i:=0;i < length;i ++{
-		curNum :=output[i]
-		path= append(path, curNum)
-		output = append(output[0:i], output[i+1:]...)
-		backTrack(len(output),output,path)
-		output = append(output[:i], append([]int{curNum},output[i:]...)...)
-		path = path[:len(path)-1]
+	for i := 0; i < length; i++ {
+		if len(used) < useNum+1 || used[useNum] != output[i] {
+			curNum := output[i]
+			if len(used) < useNum+1 {
+				used = append(used, curNum)
+			} else {
+				used[useNum] = curNum
+			}
+			path = append(path, curNum)
+			output = append(output[0:i], output[i+1:]...)
+			backTrack(len(output), output, path, used, useNum+1)
+			output = append(output[:i], append([]int{curNum}, output[i:]...)...)
+			path = path[:len(path)-1]
+		}
 	}
 }
 
+// leetcode submit region end(Prohibit modification and deletion)
 
-//leetcode submit region end(Prohibit modification and deletion)
+func TestPermutations(t *testing.T) {
+	fmt.Println(permute([]int{1, 1, 2}))
+}
 
+// 112题
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
 
-func TestPermutations(t *testing.T){
-	fmt.Println(permute([]int{5,4,6,2}))
+// 展示这个Tree
+func ShowTree(root *TreeNode) {
+	if root == nil {
+		return
+	}
+	fmt.Printf("node is %d", root.Val)
+	ShowTree(root.Left)
+	ShowTree(root.Right)
+	fmt.Println(".")
+}
+
+// [5,4,8,11,null,13,4,7,2,null,null,null,1]
+// 使用堆构建二叉树
+func NewTreeAccordingHeap(heap []int) *TreeNode {
+	root := &TreeNode{}
+	CreateTree(root, heap, 0)
+	return root
+}
+
+func CreateTree(root *TreeNode, heap []int, num int) {
+	root.Val = heap[num]
+	if len(heap) > 2*num+1 {
+		if heap[2*num+1] != -1 {
+			root.Left = &TreeNode{}
+			CreateTree(root.Left, heap, 2*num+1)
+		}
+	}
+	if len(heap) > 2*num+2 {
+		if heap[2*num+2] != -1 {
+			root.Right = &TreeNode{}
+			CreateTree(root.Right, heap, 2*num+2)
+		}
+	}
+}
+
+var isTrue = false
+
+func hasPathSum(root *TreeNode, targetSum int) bool {
+	isTrue = false
+	backTrackPath(root, 0, targetSum)
+	return isTrue
+}
+
+func backTrackPath(root *TreeNode, preSum int, targetSum int) {
+	if root == nil {
+		return
+	}
+	if root.Left == nil && root.Right == nil {
+		if preSum+root.Val == targetSum {
+			isTrue = true
+		}
+		return
+	}
+	backTrackPath(root.Left, preSum+root.Val, targetSum)
+	backTrackPath(root.Right, preSum+root.Val, targetSum)
+}
+
+// leetcode submit region end(Prohibit modification and deletion)
+
+func TestPathSum(t *testing.T) {
+	// fmt.Println(hasPathSum(NewTree(),6))
+	root := NewTreeAccordingHeap([]int{1, 2, 3})
+	fmt.Println(hasPathSum(root, 22))
+}
+
+// var node []int
+// func inorderTraversal(root *TreeNode)[]int {
+// 	node =[]int{}
+// 	inoTraversal(root)
+// 	return node
+// }
+//
+// func inoTraversal(root *TreeNode){
+// 	if root == nil{
+// 		return
+// 	}
+// 	inoTraversal(root.Left)
+// 	node = append(node, root.Val)
+// 	inoTraversal(root.Right)
+// }
+
+// 中序遍历
+func inorderTraversal(root *TreeNode)(nodes []int) {
+	inoTraversal(root, &nodes)
+	return nodes
+}
+
+func inoTraversal(root *TreeNode, node *[]int)  {
+	if root == nil {
+		return
+	}
+
+	inoTraversal(root.Left, node)
+	*node = append(*node, root.Val)
+	inoTraversal(root.Right, node)
+}
+
+// leetcode submit region end(Prohibit modification and deletion)
+
+func TestBinaryTreeInorderTraversal(t *testing.T) {
+	root := NewTreeAccordingHeap([]int{1, 2, 3})
+	fmt.Println(inorderTraversal(root))
+}
+
+var nodes []*TreeNode
+func generateTrees(n int) []*TreeNode {
+	node :=make([]int,0,n)
+	for i:=1;i<=n;i++{
+		node = append(node, i)
+	}
+	createTree(node,&TreeNode{})
+	return nodes
+}
+
+func createTree(node []int,tNode *TreeNode,){
+	if len(node) == 0 {
+		nodes = append(nodes, tNode)
+	}
+	for k := range node {
+		curNum:=node[k]
+		tNode.Val = curNum
+		if len(node) ==1 {
+			node = []int{}
+		}else{
+			node = append(node[0:k], node[k+1:]...)
+		}
+		tNode.Val=curNum
+		tNode.Left= &TreeNode{}
+		tNode.Right = &TreeNode{}
+		createTree(node,tNode.Left)
+		createTree(node,tNode.Right)
+		node = append(append(node[0:k], curNum), node[k:]...)
+	}
+}
+
+func TestUniqueBinarySearchTreesIi(t *testing.T){
+	n :=generateTrees(2)
+	fmt.Println(n)
+	fmt.Println("hahaha")
 }
