@@ -375,21 +375,6 @@ func TestPathSum(t *testing.T) {
 	fmt.Println(hasPathSum(root, 22))
 }
 
-// var node []int
-// func inorderTraversal(root *TreeNode)[]int {
-// 	node =[]int{}
-// 	inoTraversal(root)
-// 	return node
-// }
-//
-// func inoTraversal(root *TreeNode){
-// 	if root == nil{
-// 		return
-// 	}
-// 	inoTraversal(root.Left)
-// 	node = append(node, root.Val)
-// 	inoTraversal(root.Right)
-// }
 
 // 中序遍历
 func inorderTraversal(root *TreeNode)(nodes []int) {
@@ -414,35 +399,31 @@ func TestBinaryTreeInorderTraversal(t *testing.T) {
 	fmt.Println(inorderTraversal(root))
 }
 
-var nodes []*TreeNode
 func generateTrees(n int) []*TreeNode {
-	node :=make([]int,0,n)
-	for i:=1;i<=n;i++{
-		node = append(node, i)
+	if n == 0{
+		return nil
 	}
-	createTree(node,&TreeNode{})
-	return nodes
+	return createTree(1,n)
 }
 
-func createTree(node []int,tNode *TreeNode,){
-	if len(node) == 0 {
-		nodes = append(nodes, tNode)
+func createTree(start,end int)[]*TreeNode{
+	if start > end {
+		return []*TreeNode{nil}
 	}
-	for k := range node {
-		curNum:=node[k]
-		tNode.Val = curNum
-		if len(node) ==1 {
-			node = []int{}
-		}else{
-			node = append(node[0:k], node[k+1:]...)
+	allTree :=[]*TreeNode{}
+	for i:=start; i<=end; i++ {
+		lTree :=createTree(start,i-1)
+		rTree :=createTree(i+1,end)
+		for _, left := range lTree {
+			for _, right := range rTree {
+				curTree:=&TreeNode{i,nil,nil}
+				curTree.Left = left
+				curTree.Right = right
+				allTree = append(allTree, curTree)
+			}
 		}
-		tNode.Val=curNum
-		tNode.Left= &TreeNode{}
-		tNode.Right = &TreeNode{}
-		createTree(node,tNode.Left)
-		createTree(node,tNode.Right)
-		node = append(append(node[0:k], curNum), node[k:]...)
 	}
+	return allTree
 }
 
 func TestUniqueBinarySearchTreesIi(t *testing.T){
