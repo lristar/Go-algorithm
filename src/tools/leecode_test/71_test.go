@@ -375,6 +375,19 @@ func TestPathSum(t *testing.T) {
 	fmt.Println(hasPathSum(root, 22))
 }
 
+func preorderTraversal(root *TreeNode) (nums []int) {
+	preorder(root,&nums)
+	return nums
+}
+
+func preorder(root *TreeNode,nums *[]int){
+	if root == nil {
+		return
+	}
+	*nums = append(*nums, root.Val)
+	preorder(root.Left,nums)
+	preorder(root.Right,nums)
+}
 
 // 中序遍历
 func inorderTraversal(root *TreeNode)(nodes []int) {
@@ -396,7 +409,7 @@ func inoTraversal(root *TreeNode, node *[]int)  {
 
 func TestBinaryTreeInorderTraversal(t *testing.T) {
 	root := NewTreeAccordingHeap([]int{1, 2, 3})
-	fmt.Println(inorderTraversal(root))
+	fmt.Println(preorderTraversal(root))
 }
 
 func generateTrees(n int) []*TreeNode {
@@ -405,6 +418,7 @@ func generateTrees(n int) []*TreeNode {
 	}
 	return createTree(1,n)
 }
+
 
 func createTree(start,end int)[]*TreeNode{
 	if start > end {
@@ -430,4 +444,55 @@ func TestUniqueBinarySearchTreesIi(t *testing.T){
 	n :=generateTrees(2)
 	fmt.Println(n)
 	fmt.Println("hahaha")
+}
+
+func letterCombinations(digits string) []string {
+	if len(digits) ==0{
+		return []string{}
+	}
+	nums := selectNum(digits)
+	rs :=[]string{}
+	addNums(nums,0,&rs,"")
+	return rs
+}
+
+func addNums(nums [][]string,i int,rs *[]string,str string)  {
+	if len(nums) == i{
+		*rs = append(*rs, str)
+		return
+	}
+	for _, v := range nums[i] {
+		addNums(nums,i+1,rs,str+v)
+	}
+}
+
+func selectNum(digits string)[][]string{
+	nums := [][]string{}
+	for _, num := range digits {
+		switch num {
+		case 50:
+			nums = append(nums, []string{"a","b","c"})
+		case 51:
+			nums = append(nums, []string{"d","e","f"})
+		case 52:
+			nums = append(nums, []string{"g","h","i"})
+		case 53:
+			nums = append(nums, []string{"j","k","l"})
+		case 54:
+			nums = append(nums, []string{"m","n","o"})
+		case 55:
+			nums = append(nums, []string{"p","q","r","s"})
+		case 56:
+			nums = append(nums, []string{"t","u","v"})
+		case 57:
+			nums = append(nums, []string{"w","x","y","z"})
+		}
+	}
+	return nums
+}
+
+func TestCombinations(t *testing.T){
+	//fmt.Println(letterCombinations())
+	result := letterCombinations("23")
+	fmt.Println(result)
 }
