@@ -376,26 +376,26 @@ func TestPathSum(t *testing.T) {
 }
 
 func preorderTraversal(root *TreeNode) (nums []int) {
-	preorder(root,&nums)
+	preorder(root, &nums)
 	return nums
 }
 
-func preorder(root *TreeNode,nums *[]int){
+func preorder(root *TreeNode, nums *[]int) {
 	if root == nil {
 		return
 	}
 	*nums = append(*nums, root.Val)
-	preorder(root.Left,nums)
-	preorder(root.Right,nums)
+	preorder(root.Left, nums)
+	preorder(root.Right, nums)
 }
 
 // 中序遍历
-func inorderTraversal(root *TreeNode)(nodes []int) {
+func inorderTraversal(root *TreeNode) (nodes []int) {
 	inoTraversal(root, &nodes)
 	return nodes
 }
 
-func inoTraversal(root *TreeNode, node *[]int)  {
+func inoTraversal(root *TreeNode, node *[]int) {
 	if root == nil {
 		return
 	}
@@ -404,33 +404,45 @@ func inoTraversal(root *TreeNode, node *[]int)  {
 	*node = append(*node, root.Val)
 	inoTraversal(root.Right, node)
 }
+func postorderTraversal(root *TreeNode) (val []int) {
+	postOrder(root, &val)
+	return val
+}
+
+func postOrder(root *TreeNode, result *[]int) {
+	if root == nil {
+		return
+	}
+	postOrder(root.Left, result)
+	postOrder(root.Right, result)
+	*result = append(*result, root.Val)
+}
 
 // leetcode submit region end(Prohibit modification and deletion)
 
 func TestBinaryTreeInorderTraversal(t *testing.T) {
-	root := NewTreeAccordingHeap([]int{1, 2, 3})
+	root := NewTreeAccordingHeap([]int{1, -1, 2, 3})
 	fmt.Println(preorderTraversal(root))
 }
 
 func generateTrees(n int) []*TreeNode {
-	if n == 0{
+	if n == 0 {
 		return nil
 	}
-	return createTree(1,n)
+	return createTree(1, n)
 }
 
-
-func createTree(start,end int)[]*TreeNode{
+func createTree(start, end int) []*TreeNode {
 	if start > end {
 		return []*TreeNode{nil}
 	}
-	allTree :=[]*TreeNode{}
-	for i:=start; i<=end; i++ {
-		lTree :=createTree(start,i-1)
-		rTree :=createTree(i+1,end)
+	allTree := []*TreeNode{}
+	for i := start; i <= end; i++ {
+		lTree := createTree(start, i-1)
+		rTree := createTree(i+1, end)
 		for _, left := range lTree {
 			for _, right := range rTree {
-				curTree:=&TreeNode{i,nil,nil}
+				curTree := &TreeNode{i, nil, nil}
 				curTree.Left = left
 				curTree.Right = right
 				allTree = append(allTree, curTree)
@@ -440,59 +452,149 @@ func createTree(start,end int)[]*TreeNode{
 	return allTree
 }
 
-func TestUniqueBinarySearchTreesIi(t *testing.T){
-	n :=generateTrees(2)
+func TestUniqueBinarySearchTreesIi(t *testing.T) {
+	n := generateTrees(2)
 	fmt.Println(n)
 	fmt.Println("hahaha")
 }
 
 func letterCombinations(digits string) []string {
-	if len(digits) ==0{
+	if len(digits) == 0 {
 		return []string{}
 	}
 	nums := selectNum(digits)
-	rs :=[]string{}
-	addNums(nums,0,&rs,"")
+	rs := []string{}
+	addNums(nums, 0, &rs, "")
 	return rs
 }
 
-func addNums(nums [][]string,i int,rs *[]string,str string)  {
-	if len(nums) == i{
+func addNums(nums [][]string, i int, rs *[]string, str string) {
+	if len(nums) == i {
 		*rs = append(*rs, str)
 		return
 	}
 	for _, v := range nums[i] {
-		addNums(nums,i+1,rs,str+v)
+		addNums(nums, i+1, rs, str+v)
 	}
 }
 
-func selectNum(digits string)[][]string{
+func selectNum(digits string) [][]string {
 	nums := [][]string{}
 	for _, num := range digits {
 		switch num {
 		case 50:
-			nums = append(nums, []string{"a","b","c"})
+			nums = append(nums, []string{"a", "b", "c"})
 		case 51:
-			nums = append(nums, []string{"d","e","f"})
+			nums = append(nums, []string{"d", "e", "f"})
 		case 52:
-			nums = append(nums, []string{"g","h","i"})
+			nums = append(nums, []string{"g", "h", "i"})
 		case 53:
-			nums = append(nums, []string{"j","k","l"})
+			nums = append(nums, []string{"j", "k", "l"})
 		case 54:
-			nums = append(nums, []string{"m","n","o"})
+			nums = append(nums, []string{"m", "n", "o"})
 		case 55:
-			nums = append(nums, []string{"p","q","r","s"})
+			nums = append(nums, []string{"p", "q", "r", "s"})
 		case 56:
-			nums = append(nums, []string{"t","u","v"})
+			nums = append(nums, []string{"t", "u", "v"})
 		case 57:
-			nums = append(nums, []string{"w","x","y","z"})
+			nums = append(nums, []string{"w", "x", "y", "z"})
 		}
 	}
 	return nums
 }
 
-func TestCombinations(t *testing.T){
+func TestCombinations(t *testing.T) {
 	//fmt.Println(letterCombinations())
 	result := letterCombinations("23")
 	fmt.Println(result)
+}
+
+// 32题最长有效字串
+func longestValidParentheses(s string) int {
+	// 定义两个数组作为栈
+	max := 0
+	mid := make([]rune, 0)
+	mid = append(mid, -1)
+	for k, v := range s {
+		if v == 40 {
+			mid = append(mid, rune(k))
+		} else {
+			mid = mid[:len(mid)-1]
+			if len(mid) < 1 {
+				mid = append(mid, rune(k))
+			} else {
+				before := mid[len(mid)-1]
+				length := k - int(before)
+				if max < length {
+					max = length
+				}
+			}
+		}
+	}
+
+	return max
+}
+
+func Test_longestValidParentheses(t *testing.T) {
+	fmt.Println("len is ", longestValidParentheses(")()((())"))
+}
+
+func judgeMin(a []int) int {
+	length := len(a)
+	if length == 1 {
+		return a[0]
+	}
+	if length == 2 {
+		if a[0] > a[1] {
+			return a[1]
+		}
+		return a[0]
+	}
+	mid := length / 2
+	a1 := judgeMin(a[0:mid])
+	a2 := judgeMin(a[mid:])
+	if a1 > a2 {
+		return a2
+	}
+	return a1
+}
+
+func Test_judgeMin(t *testing.T) {
+	aa := []int{1, 4325, 6, 4, 7, 6}
+	fmt.Println(judgeMin(aa))
+}
+
+func trap(height []int) int {
+	capacity := 0
+	stack := make([]int, 0)
+	for _, v := range height {
+		if len(stack) == 0 || stack[len(stack)-1] > v {
+			stack = append(stack, v)
+		} else {
+			i :=len(stack) -1
+			for i >=0 {
+				if stack[len(stack)-1] >= v {
+					break
+				}else{
+					mid:=stack[i]
+					i--
+					h := getmin(stack[i],v)
+					capacity += h-mid
+				}
+			}
+		}
+	}
+	return capacity
+}
+func getmin(a,b int)int{
+	if a >b {
+		return b
+	}
+	return a
+
+}
+
+func Test_trap(t *testing.T) {
+	fmt.Println("trap is", trap([]int{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1}))
+
 }
