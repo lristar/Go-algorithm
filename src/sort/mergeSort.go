@@ -1,4 +1,6 @@
-package sort
+package main
+
+import "fmt"
 
 
 //归并排序
@@ -19,4 +21,10 @@ func MSort(left, right int, aa []int) {
 			}
 		}
 	}
+}
+
+func main() {
+	i := []int{1, 4, 2, 4, 7, 5}
+	MergeSort(0, len(i)-1, i)
+	fmt.Println(i)
 }

@@ -1,4 +1,4 @@
-package sort
+package main
 
 //选择排序 --查找最小的插入到前面
 
