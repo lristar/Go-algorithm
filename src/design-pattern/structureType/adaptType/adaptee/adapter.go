@@ -7,15 +7,9 @@ var AllPay = map[string]Adaptee{
 	"aggregationpay":NewAggregationPay(),
 }
 
-
 // 目标接口
 type Target interface {
 	RequestPay(types string) string
-}
-
-// 被适配的目标接口
-type Adaptee interface {
-	SpecificPay() string
 }
 
 type Adapter struct {
