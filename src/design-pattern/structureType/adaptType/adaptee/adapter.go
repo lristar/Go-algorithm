@@ -1,12 +1,5 @@
 package adaptee
 
-// 适配的集合
-var AllPay = map[string]Adaptee{
-	"wechat":NewWechatPay(),
-	"alipay":NewAliPay(),
-	"aggregationpay":NewAggregationPay(),
-}
-
 // 目标接口
 type Target interface {
 	RequestPay(types string) string
