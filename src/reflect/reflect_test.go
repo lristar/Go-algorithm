@@ -15,6 +15,9 @@ type Student struct {
 	Age  int
 }
 
+
+
+
 func (s *Student) Hello(str string) {
 	fmt.Println(str)
 }

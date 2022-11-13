@@ -11,7 +11,7 @@ type IInfo interface {
 }
 
 type CommInfo struct {
-
+	ctx string
 }
 
 func (c *CommInfo)Info(){
@@ -21,19 +21,45 @@ func (c *CommInfo)Detail(){
 	fmt.Println("Detail")
 }
 func (c *CommInfo)Run(){
-	fmt.Println("Run")
 }
 func (c *CommInfo)Stop(){
 	fmt.Println("Stop")
 }
 
+type Demo struct {
+
+}
+
+type IDemo interface {
+	GOGO()
+}
+
+func (d *Demo) GOGO(){
+	fmt.Println("gogogo")
+}
 
 type BatchInfo struct {
 	CommInfo
+	Demo
 }
 
+func (b *BatchInfo)Run(){
+	fmt.Println("runrunrun")
+	b.GOGO()
+}
+
+type BatchModifyInfo struct {
+	BatchInfo
+}
+
+func (b *BatchModifyInfo)GOGO(){
+	fmt.Println("GOGOGOGOGOGO")
+}
+
+
 func main() {
-	b := BatchInfo{}
+	b := new(BatchModifyInfo)
+	b.ctx="halo"
 	b.Run()
 }
 
