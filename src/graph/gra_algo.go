@@ -58,19 +58,19 @@ func (k *Krus) GetMinTree() {
 		}
 	}
 	sort.Sort(kk)
-	for i := range kk {
-		// 这个查看环路有问题，使用并查集查看环路
-		if k.nodes[kk[i].from] == k.nodes[kk[i].to] {
-			continue
-		}
-		if len(k.nodes) != len(k.spot) {
-			// 这里如何
-			k.nodes[kk[i].from] = struct{}{}
-			k.nodes[kk[i].to] = struct{}{}
-			k.AddEdges11(kk[i].from, kk[i].to, kk[i].width)
-		}
-		continue
-	}
+	//for i := range kk {
+	//	// 这个查看环路有问题，使用并查集查看环路
+	//	//if k.nodes[kk[i].from] == k.nodes[kk[i].to] {
+	//	//	continue
+	//	//}
+	//	//if len(k.nodes) != len(k.spot) {
+	//	//	// 这里如何
+	//	//	k.nodes[kk[i].from] = struct{}{}
+	//	//	k.nodes[kk[i].to] = struct{}{}
+	//	//	k.AddEdges11(kk[i].from, kk[i].to, kk[i].width)
+	//	//}
+	//	continue
+	//}
 }
 
 func Kruss(p Graph1) {
@@ -154,6 +154,7 @@ func (d *dsu) GetRoot(i int) int {
 	if d.data[i] != i {
 		d.GetRoot(d.data[i])
 	}
+	return i
 }
 
 // todo
